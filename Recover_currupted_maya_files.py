@@ -3,7 +3,7 @@ import maya.cmds as mc
 selection = mc.ls(sl = True)
 
 for object in selection:
-    attributes = mc.listAttr(object, k = True)
+    attributes = mc.listAttr(object, key = True)
     for attr in attributes:
         try:
             mc.connectAttr(object.split(":")[1]+"_"+attr+".output",object+"."+attr, f = True)
